@@ -1,0 +1,42 @@
+<div class="eligibility-layout">
+  <div class="elig-left">
+    <div>
+      <div class="section-tag">Eligibility checker</div>
+      <div class="elig-title">Find your fit</div>
+      <div class="elig-sub">Enter your academic profile to see which companies you qualify for in real time.</div>
+      <div class="inst-toggle">
+        <button class="inst-btn active" onclick="setEligInst(this,'engineering')">Engineering</button>
+        <button class="inst-btn" onclick="setEligInst(this,'mba')">MBA</button>
+        <button class="inst-btn" onclick="setEligInst(this,'degree')">Degree</button>
+        <button class="inst-btn" onclick="setEligInst(this,'diploma')">Diploma</button>
+      </div>
+      <div class="form-group">
+        <label>Branch / Specialisation</label>
+        <select id="e_branch"><option value="">Select branch</option></select>
+      </div>
+      <div class="form-row">
+        <div class="form-group"><label>CGPA / Percentage</label><input type="number" id="e_cgpa" placeholder="e.g. 7.8" min="0" max="10" step="0.01"/></div>
+        <div class="form-group"><label>Active backlogs</label><select id="e_backlogs"><option value="0">0</option><option value="1">1</option><option value="2">2</option><option value="3">3+</option></select></div>
+      </div>
+      <div class="form-row">
+        <div class="form-group"><label>10th percentage</label><input type="number" id="e_tenth" placeholder="e.g. 82" min="0" max="100"/></div>
+        <div class="form-group"><label>12th / Grad %</label><input type="number" id="e_twelfth" placeholder="e.g. 75" min="0" max="100"/></div>
+      </div>
+      <div class="form-group">
+        <label>Opportunity type</label>
+        <select id="e_type">
+          <option value="both">Both (Placement + Internship)</option>
+          <option value="placement">Full-time Placement only</option>
+          <option value="internship">Internship only</option>
+        </select>
+      </div>
+      <button class="check-btn" onclick="runElig()">Check My Eligibility →</button>
+    </div>
+  </div>
+  <div class="elig-right" id="elig-right">
+    <div class="elig-placeholder">
+      <div class="elig-placeholder-icon">🎯</div>
+      <p>Fill in your profile on the left and hit <strong>Check My Eligibility</strong> to see your results here.</p>
+    </div>
+  </div>
+</div>
