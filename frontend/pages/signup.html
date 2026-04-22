@@ -1,0 +1,24 @@
+<div class="auth-page">
+  <div class="auth-card">
+    <h2>Create account</h2>
+    <p>Join PlaceTrack to track your eligibility</p>
+    <form id="signup-form" onsubmit="event.preventDefault(); handleSignup();">
+      <div class="form-group">
+        <label>Full name</label>
+        <input type="text" id="s_name" placeholder="John Doe" required />
+      </div>
+      <div class="form-group">
+        <label>Email address</label>
+        <input type="email" id="s_email" placeholder="name@college.edu" required />
+      </div>
+      <div class="form-group">
+        <label>Password</label>
+        <input type="password" id="s_pass" placeholder="••••••••" required />
+      </div>
+      <button type="submit" class="auth-btn">Create account</button>
+    </form>
+    <div class="auth-switch">
+      Already have an account? <a href="#/login">Login</a>
+    </div>
+  </div>
+</div>

@@ -1,39 +1,138 @@
-export const companies = [
-  { name: "Microsoft", logo: "MS", color: "#0078d4", role: "Software Engineer", sector: "Product", type: "placement", branches: ["CSE", "IT"], cgpa: 7.5, tenth: 75, twelfth: 70, backlogs: 0, package: "42 LPA", year: "2023-24" },
-  { name: "Google", logo: "G", color: "#34a853", role: "SWE L3", sector: "Product", type: "placement", branches: ["CSE", "IT"], cgpa: 8.0, tenth: 80, twelfth: 75, backlogs: 0, package: "38 LPA", year: "2023-24" },
-  { name: "Amazon", logo: "AMZ", color: "#ff9900", role: "SDE-1", sector: "Product", type: "placement", branches: ["CSE", "IT", "ECE"], cgpa: 7.0, tenth: 70, twelfth: 65, backlogs: 0, package: "32 LPA", year: "2023-24" },
-  { name: "Goldman Sachs", logo: "GS", color: "#00a3b4", role: "Analyst", sector: "Finance", type: "placement", branches: ["CSE", "IT"], cgpa: 7.5, tenth: 75, twelfth: 70, backlogs: 0, package: "18 LPA", year: "2023-24" },
-  { name: "Flipkart", logo: "FL", color: "#2874f0", role: "SDE Intern", sector: "Product", type: "internship", branches: ["CSE", "IT"], cgpa: 7.5, tenth: 75, twelfth: 70, backlogs: 0, package: "₹70k/mo", year: "2023-24" },
-  { name: "Adobe", logo: "AD", color: "#ff0000", role: "MTS Intern", sector: "Product", type: "internship", branches: ["CSE", "IT"], cgpa: 7.5, tenth: 70, twelfth: 70, backlogs: 0, package: "₹60k/mo", year: "2023-24" },
-  { name: "Deloitte", logo: "DE", color: "#86bc25", role: "Business Analyst", sector: "Consulting", type: "placement", branches: ["CSE", "IT", "ECE"], cgpa: 6.5, tenth: 65, twelfth: 60, backlogs: 0, package: "7.5 LPA", year: "2023-24" },
-  { name: "KPMG", logo: "KP", color: "#00338d", role: "Technology Consultant", sector: "Consulting", type: "placement", branches: ["CSE", "IT", "ECE"], cgpa: 6.0, tenth: 60, twelfth: 60, backlogs: 0, package: "8 LPA", year: "2022-23" },
-  { name: "TCS", logo: "TCS", color: "#003087", role: "Associate SE", sector: "IT", type: "placement", branches: ["CSE", "IT", "ECE", "EEE", "Mechanical", "Civil"], cgpa: 5.5, tenth: 60, twelfth: 55, backlogs: 0, package: "3.6 LPA", year: "2023-24" },
-  { name: "Infosys", logo: "IN", color: "#007cc3", role: "Systems Engineer", sector: "IT", type: "placement", branches: ["CSE", "IT", "ECE", "EEE"], cgpa: 6.0, tenth: 60, twelfth: 60, backlogs: 0, package: "4.5 LPA", year: "2023-24" },
-  { name: "Wipro", logo: "WI", color: "#341c6b", role: "Project Engineer", sector: "IT", type: "placement", branches: ["CSE", "IT", "ECE", "EEE"], cgpa: 5.5, tenth: 55, twelfth: 55, backlogs: 0, package: "3.5 LPA", year: "2022-23" },
-  { name: "L&T Technology", logo: "LT", color: "#e87722", role: "Graduate Engineer", sector: "Core", type: "placement", branches: ["Mechanical", "Civil", "EEE", "ECE"], cgpa: 6.5, tenth: 65, twelfth: 60, backlogs: 0, package: "5.5 LPA", year: "2023-24" },
-  { name: "NTPC", logo: "NT", color: "#1a5276", role: "Executive Trainee", sector: "Core", type: "placement", branches: ["EEE", "Mechanical", "Civil"], cgpa: 6.5, tenth: 65, twelfth: 60, backlogs: 0, package: "6.5 LPA", year: "2022-23" },
-  { name: "Samsung R&D", logo: "SAM", color: "#1428a0", role: "Software Intern", sector: "Product", type: "internship", branches: ["CSE", "IT", "ECE"], cgpa: 7.0, tenth: 65, twelfth: 65, backlogs: 0, package: "₹40k/mo", year: "2023-24" },
-  { name: "ICICI Bank", logo: "IC", color: "#b02a4c", role: "IT Intern", sector: "Finance", type: "internship", branches: ["CSE", "IT", "ECE"], cgpa: 6.5, tenth: 65, twelfth: 60, backlogs: 0, package: "₹25k/mo", year: "2023-24" },
-  { name: "Accenture", logo: "AC", color: "#a100ff", role: "Associate", sector: "IT", type: "placement", branches: ["CSE", "IT", "ECE", "Mechanical"], cgpa: 5.5, tenth: 55, twelfth: 55, backlogs: 0, package: "4.5 LPA", year: "2021-22" },
-  { name: "Capgemini", logo: "CAP", color: "#0070ad", role: "Analyst", sector: "IT", type: "placement", branches: ["CSE", "IT", "ECE", "EEE", "Mechanical"], cgpa: 5.5, tenth: 55, twelfth: 55, backlogs: 1, package: "3.8 LPA", year: "2022-23" },
-  { name: "Tata Steel", logo: "TS", color: "#004f9f", role: "Engineering Intern", sector: "Core", type: "internship", branches: ["Mechanical", "Civil", "EEE"], cgpa: 6.0, tenth: 60, twelfth: 60, backlogs: 1, package: "₹18k/mo", year: "2023-24" },
-];
+import { state } from './state.js';
+import { fetchTrendStats } from './api.js';
 
-export const eligData = {
-  engineering: {
-    branches: ["Computer Science (CSE)", "Information Technology (IT)", "Electronics & Communication (ECE)", "Mechanical Engineering", "Civil Engineering", "Electrical Engineering (EEE)"],
-    keys: { "Computer Science (CSE)": "CSE", "Information Technology (IT)": "IT", "Electronics & Communication (ECE)": "ECE", "Mechanical Engineering": "Mechanical", "Civil Engineering": "Civil", "Electrical Engineering (EEE)": "EEE" },
-  },
-  mba: {
-    branches: ["Finance", "Marketing", "Human Resources", "Operations", "Business Analytics", "Information Systems"],
-    keys: { "Finance": "Finance", "Marketing": "Marketing", "Human Resources": "HR", "Operations": "Operations", "Business Analytics": "Analytics", "Information Systems": "IT" },
-  },
-  degree: {
-    branches: ["BCA (Computer Applications)", "BBA (Business Admin)", "B.Sc Computer Science", "B.Sc Mathematics", "B.Com", "B.Sc Statistics"],
-    keys: { "BCA (Computer Applications)": "BCA", "BBA (Business Admin)": "BBA", "B.Sc Computer Science": "BSc CS", "B.Sc Mathematics": "BSc Math", "B.Com": "BCom", "B.Sc Statistics": "BSc Stats" },
-  },
-  diploma: {
-    branches: ["Diploma – Computer Engineering", "Diploma – Electronics", "Diploma – Mechanical", "Diploma – Civil", "Diploma – Electrical", "Diploma – IT"],
-    keys: { "Diploma – Computer Engineering": "Comp", "Diploma – Electronics": "Electronics", "Diploma – Mechanical": "Mechanical", "Diploma – Civil": "Civil", "Diploma – Electrical": "Electrical", "Diploma – IT": "IT" },
+export function initDataPage() {
+  const statsEl = document.getElementById('d-stats');
+  if (!statsEl) return;
+
+  if (state.companies.length === 0) {
+    statsEl.innerHTML = `<div class="sc" style="grid-column:1/-1;text-align:center"><div class="sc-lbl">Notice</div><div class="sc-val" style="font-size:1.2rem">No data available. Check server.</div></div>`;
+    return;
   }
-};
+
+  const placements = state.companies.filter(c => c.type === 'placement');
+  const interns = state.companies.filter(c => c.type === 'internship');
+
+  statsEl.innerHTML = `
+    <div class="sc"><div class="sc-lbl">Total companies</div><div class="sc-val">${state.companies.length}</div><div class="sc-sub">All time</div></div>
+    <div class="sc"><div class="sc-lbl">Placement offers</div><div class="sc-val accent">${placements.length}</div><div class="sc-sub">Full-time</div></div>
+    <div class="sc"><div class="sc-lbl">Internship offers</div><div class="sc-val teal">${interns.length}</div><div class="sc-sub">Stipend roles</div></div>
+    <div class="sc"><div class="sc-lbl">Active Recruiting</div><div class="sc-val accent">${state.companies.filter(c => c.year === '2023-24').length}</div><div class="sc-sub">2023-24 Cycle</div></div>
+    <div class="sc"><div class="sc-lbl">Avg CGPA Req</div><div class="sc-val">6.8</div><div class="sc-sub">Across sectors</div></div>`;
+
+  renderCompaniesTab();
+}
+
+export function setDataTab(tab, el) {
+  state.activeDataTab = tab;
+  document.querySelectorAll('.dtab').forEach(d => d.classList.remove('active'));
+  el.classList.add('active');
+
+  if (tab === 'companies') renderCompaniesTab();
+  if (tab === 'trends') state.trendStats ? renderTrendsTab() : fetchTrendStats().then(renderTrendsTab);
+  if (tab === 'internships') renderInternshipsTab();
+}
+
+export function renderCompaniesTab() {
+  const content = document.getElementById('data-content');
+  if (!content) return;
+
+  content.innerHTML = `
+    <div class="filter-strip">
+      <input type="text" id="co-search" placeholder="Search company or role..." />
+      <select id="co-sector"><option value="all">All sectors</option><option>Product</option><option>IT</option><option>Finance</option><option>Consulting</option><option>Core</option></select>
+      <select id="co-year"><option value="all">All years</option><option>2023-24</option><option>2022-23</option><option>2021-22</option></select>
+    </div>
+    <div style="overflow-x:auto">
+      <table class="co-table">
+        <thead><tr><th>Company</th><th>Role</th><th>Sector</th><th>Branches</th><th>Min CGPA</th><th>Year</th></tr></thead>
+        <tbody id="co-tbody"></tbody>
+      </table>
+    </div>`;
+
+  document.getElementById('co-search').addEventListener('input', filterDataTable);
+  document.getElementById('co-sector').addEventListener('change', filterDataTable);
+  document.getElementById('co-year').addEventListener('change', filterDataTable);
+
+  filterDataTable();
+}
+
+export function filterDataTable() {
+  const search = (document.getElementById('co-search')?.value || '').toLowerCase();
+  const sector = document.getElementById('co-sector')?.value || 'all';
+  const year = document.getElementById('co-year')?.value || 'all';
+
+  const filtered = state.companies.filter(c => {
+    if (c.type !== 'placement') return false;
+    if (sector !== 'all' && c.sector !== sector) return false;
+    if (year !== 'all' && c.year !== year) return false;
+    if (search && !c.name.toLowerCase().includes(search) && !c.role.toLowerCase().includes(search)) return false;
+    return true;
+  });
+
+  const sectorColors = { Product: 'pill-green', IT: 'pill-blue', Finance: 'pill-amber', Consulting: 'pill-purple', Core: 'pill-red' };
+  const tbody = document.getElementById('co-tbody');
+  if (!tbody) return;
+
+  tbody.innerHTML = filtered.length ? filtered.map(c => `
+    <tr>
+      <td><span style="display:inline-flex;align-items:center;gap:8px"><span style="width:28px;height:28px;border-radius:6px;background:${c.color}22;color:${c.color};display:inline-flex;align-items:center;justify-content:center;font-size:10px;font-weight:700">${c.logo}</span>${c.name}</span></td>
+      <td>${c.role}</td>
+      <td><span class="pill ${sectorColors[c.sector] || 'pill-blue'}">${c.sector}</span></td>
+      <td style="font-size:12px">${c.branches.join(', ')}</td>
+      <td>${c.cgpa}</td>
+      <td style="color:var(--gray)">${c.year}</td>
+    </tr>`).join('') : `<tr><td colspan="6" class="no-data">No results found.</td></tr>`;
+}
+
+export function renderTrendsTab() {
+  const content = document.getElementById('data-content');
+  if (!content) return;
+  if (!state.trendStats) return content.innerHTML = `<div class="no-data">Loading...</div>`;
+
+  const { yearData, sectors, branches } = state.trendStats;
+  const mxY = Math.max(...yearData.map(r => r.n), 1);
+  const mxS = Math.max(...sectors.map(r => r.n), 1);
+  const mxB = Math.max(...branches.map(r => r.v), 1);
+
+  content.innerHTML = `
+    <div class="chart-row">
+      <div class="chart-box">
+        <h3>Students placed per year</h3>
+        ${yearData.map(r => `<div class="bar-row"><div class="bar-lbl">${r.y}</div><div class="bar-wrap"><div class="bar-fill" style="width:${Math.round(r.n / mxY * 100)}%;background:#4db8ff;color:var(--navy)">${r.n}</div></div></div>`).join('')}
+      </div>
+      <div class="chart-box">
+        <h3>Top sectors</h3>
+        ${sectors.map(r => `<div class="bar-row"><div class="bar-lbl" style="min-width:110px">${r.s}</div><div class="bar-wrap"><div class="bar-fill" style="width:${Math.round(r.n / mxS * 100)}%;background:${r.c};color:var(--navy)">${r.n}</div></div></div>`).join('')}
+      </div>
+    </div>
+    <div class="chart-box" style="max-width:600px">
+      <h3>Avg CTC by branch (LPA)</h3>
+      ${branches.map(r => `<div class="bar-row"><div class="bar-lbl">${r.b}</div><div class="bar-wrap"><div class="bar-fill" style="width:${Math.round(r.v / mxB * 100)}%;background:${r.c};color:var(--navy)">${r.v} L</div></div></div>`).join('')}
+    </div>`;
+}
+
+export function renderInternshipsTab() {
+  const interns = state.companies.filter(c => c.type === 'internship');
+  const sectorColors = { Product: 'pill-green', IT: 'pill-blue', Finance: 'pill-amber', Consulting: 'pill-purple', Core: 'pill-red' };
+
+  const content = document.getElementById('data-content');
+  if (!content) return;
+
+  content.innerHTML = `
+    <div style="overflow-x:auto">
+      <table class="co-table">
+        <thead><tr><th>Company</th><th>Role</th><th>Sector</th><th>Branches</th><th>Min CGPA</th><th>Year</th></tr></thead>
+        <tbody>${interns.map(c => `
+          <tr>
+            <td><span style="display:inline-flex;align-items:center;gap:8px"><span style="width:28px;height:28px;border-radius:6px;background:${c.color}22;color:${c.color};display:inline-flex;align-items:center;justify-content:center;font-size:10px;font-weight:700">${c.logo}</span>${c.name}</span></td>
+            <td>${c.role}</td>
+            <td><span class="pill ${sectorColors[c.sector] || 'pill-blue'}">${c.sector}</span></td>
+            <td style="font-size:12px">${c.branches.join(', ')}</td>
+            <td>${c.cgpa}</td>
+            <td style="color:var(--gray)">${c.year}</td>
+          </tr>`).join('')}
+        </tbody>
+      </table>
+    </div>`;
+}
