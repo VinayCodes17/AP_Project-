@@ -21,6 +21,7 @@ html { scroll-behavior: smooth; }
 body { font-family: var(--font-body); background: var(--navy); color: var(--white); overflow-x: hidden; line-height: 1.6; }
 
 /* ===== NAV ===== */
+logo-text{font-family: var(--font-head); font-weight: 700; font-size: 18px; color: var(--white); letter-spacing: -.3px; display: flex; flex-direction: row; gap: 3px;}
 nav { position: fixed; top: 0; left: 0; right: 0; z-index: 1000; background: rgba(10, 22, 40, 0.92); backdrop-filter: blur(16px); border-bottom: 1px solid var(--border); padding: 0 2.5rem; height: 68px; display: flex; align-items: center; justify-content: space-between; }
 .nav-logo { display: flex; align-items: center; gap: 10px; text-decoration: none; }
 .nav-logo-mark { width: 38px; height: 38px; background: var(--accent); border-radius: 10px; display: flex; align-items: center; justify-content: center; font-family: var(--font-head); font-weight: 800; font-size: 16px; color: var(--navy); }
